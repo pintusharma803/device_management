@@ -11,7 +11,10 @@ const PORT = process.env.PORT || 5000;
 
 // Middlewares
 app.use(cors({
-  origin: '*',
+  origin: [
+    process.env.MANUFACTURER_PANEL,
+    process.env.CUSTOMER_PANEL
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));

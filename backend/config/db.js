@@ -8,12 +8,12 @@ let pgPool = null;
 async function initializeDatabase() {
   if (pgPool) return pgPool;
 
-  const dbHost = process.env.DB_HOST || 'localhost';
+  const dbHost = process.env.DB_HOST;
   const dbPort = parseInt(process.env.DB_PORT || '5432', 10);
-  const dbName = process.env.DB_NAME || 'commondb';
-  const dbUser = process.env.DB_USER || 'postgres';
-  const dbPassword = process.env.DB_PASSWORD || '';
-  const sslConfig = process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false;
+  const dbName = process.env.DB_NAME;
+  const dbUser = process.env.DB_USER;
+  const dbPassword = process.env.DB_PASSWORD;
+  // const sslConfig = process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false;
 
   console.log(`[Database] Connecting to PostgreSQL at ${dbHost}:${dbPort}/${dbName} (User: ${dbUser})...`);
 
@@ -24,7 +24,9 @@ async function initializeDatabase() {
       database: dbName,
       user: dbUser,
       password: dbPassword,
-      ssl: sslConfig,
+      ssl: {
+        rejectUnauthorized: false
+      },
       connectionTimeoutMillis: 10000,
     });
 

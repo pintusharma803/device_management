@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://device-management-lud0.onrender.com/api';
 
 async function request(endpoint, options = {}) {
   const token = localStorage.getItem('thingspulse_token');

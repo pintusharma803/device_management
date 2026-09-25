@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+const BASE_URL = "https://device-management-lud0.onrender.com/api";
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },

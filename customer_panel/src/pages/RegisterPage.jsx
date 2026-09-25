@@ -98,7 +98,7 @@ export default function RegisterPage() {
 
       <div className="w-full max-w-md relative z-10">
         <AuthHeader
-          icon={Zap}
+          // icon={Zap}
           title="Create Customer Account"
         // subtitle="Register to manage devices, telemetry, and smart gateways"
         />

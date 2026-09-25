@@ -36,13 +36,12 @@ async function initializeDatabase() {
     client.release();
 
     pgPool = pool;
-    console.log(`✅ [Database] Connected successfully to PostgreSQL (Host: ${dbHost}, Database: ${dbName})`);
+    console.log(`Connected successfully to PostgreSQL (Host: ${dbHost}, Database: ${dbName})`);
 
     await runPostgresMigrations();
     return pgPool;
   } catch (err) {
-    console.error(`❌ [Database] Failed to connect to PostgreSQL (${err.message})`);
-    console.error(`   Please check connection settings in backend/.env: DB_HOST=${dbHost}, DB_PORT=${dbPort}, DB_NAME=${dbName}, DB_USER=${dbUser}`);
+    console.error(`Failed to connect to PostgreSQL (${err.message})`);
     throw err;
   }
 }

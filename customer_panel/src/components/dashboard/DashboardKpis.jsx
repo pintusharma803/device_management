@@ -18,7 +18,7 @@ export default function DashboardKpis({ stats, loading }) {
       subtextColor: 'text-indigo-600 dark:text-indigo-400',
     },
     {
-      title: 'Online & Active',
+      title: 'Offline Devices',
       value: online,
       subtext: `${total > 0 ? Math.round((online / total) * 100) : 100}% of fleet healthy`,
       icon: CheckCircle2,
@@ -28,7 +28,7 @@ export default function DashboardKpis({ stats, loading }) {
       hasPulseDot: true,
     },
     {
-      title: 'Offline Devices',
+      title: 'Online devices',
       value: offline,
       subtext: offline > 0 ? 'Requires attention' : 'No connection issues',
       icon: AlertTriangle,
